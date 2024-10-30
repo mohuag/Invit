@@ -1,0 +1,701 @@
+<div class="page-title-box">
+    <div class="body-header d-flex">
+        <div class="container-xxl">
+            <div class="row align-items-center g-2">
+                <div class="col">
+                    <!-- Pretitle -->
+                </div>
+            </div> <!-- Row end  -->
+        </div>
+    </div>
+</div>
+<!-- Body: Body -->
+<!-- <mat-progress-bar  mode="determinate" value="40"></mat-progress-bar> -->
+
+<div class="body d-flex py-3">
+    <div class="page-content-wrapper">
+        <div class="container-xxl">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row g-1">
+                                <!-- <mat-progress-bar  mode="determinate" value="40"></mat-progress-bar> -->
+                                <ul class="nav nav-pills mb-3 fs-6" role="tablist">
+                                    <!-- <mat-progress-bar  mode="determinate" value="40"></mat-progress-bar>
+                                        <br><br><br> -->
+                                        <app-loader [color]="'#1d47b1'"  [size]="1" *ngIf="LoadMatProgressBar"></app-loader>
+                                    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab"
+                                            href="#nav-Preview8" role="tab"  (click)="getDashboardData(Subsector.Road)" >
+                                            <i class="bi bi-sign-merge-left fs-5"></i> INVIT</a>
+                                    </li>
+                                    <app-loader [color]="'#1d47b1'"  [size]="1" *ngIf="LoadMatProgressBar"></app-loader>
+                                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
+                                            href="#nav-HTML8" role="tab"  (click)="getDashboardData(Subsector.Reits)">
+                                            <i class="bi bi-buildings fs-5"></i> REIT</a>
+                                    </li>
+                                </ul>
+                                
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="nav-Preview8"
+                                        role="tabpanel">
+                                        <p>
+                                            Road Infrastructure Investment Trusts (InvITs) are emerging as a key instrument for financing and managing road projects. These InvITs allow investors to pool their funds into infrastructure assets, offering stable returns and fostering sectoral development. RI 360 tool aims to provide comprehensive performance analysis of all road InvITs in India, delivering insights into investment trends, risk assessments and profitability metrics. The platform leverages real-time data and advanced analysis to empower stakeholders and investors in making informed decisions.<br /><br />
+                                                       
+                                        </p>
+                                        <mat-progress-bar  mode="determinate" value="40"></mat-progress-bar>
+                                        <div class="col-lg-12 g-1">
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <div class="app-academy">
+                                                        <div class="card card-border-shadow-primary h-100 text-center">
+                                                            <div class="card-body">
+                                                                    <div class="fs-1 text-uppercase">
+                                                                        <img src="assets\images\road.svg" width="200">
+                                                                    </div>
+                                                                <div class="form-group mb-1 p-2 d-grid gap-2">
+                                                                    <app-loader [color]="'#1d47b1'"  [size]="1" *ngIf="LoadMatProgressBar"></app-loader>
+                                                                    <button class="btn btn-light-primary btn-block fw-bold active" type="button" [disabled]="LoadMatProgressBar" (click)="getDashboardData(Subsector.Road)"  >Road</button>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                          </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="app-academy">
+                                                        <div class="card card-border-shadow-warning h-100 text-center">
+                                                            <div class="card-body">
+                                                                    <div class="fs-1 text-uppercase">
+                                                                        <img src="assets\images\power.svg" width="200">
+                                                                </div>
+                                                                <div class="form-group mb-1 p-2 d-grid gap-2">
+                                                                    <app-loader [color]="'#1d47b1'"  [size]="1" *ngIf="LoadMatProgressBar"></app-loader>
+                                                                    <button class="btn btn-light-warning btn-block fw-bold" type="button" [disabled]="LoadMatProgressBar" (click)="getDashboardData(Subsector.Power)">Power</button>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                          </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="app-academy">
+                                                        <div class="card card-border-shadow-success h-100 text-center">
+                                                            <div class="card-body">
+                                                                    <div class="fs-1 text-uppercase">
+                                                                        <img src="assets\images\warehouse.svg" width="200">
+                                                                </div>
+                                                                <div class="form-group mb-1 p-2 d-grid gap-2">
+                                                                    <app-loader [color]="'#1d47b1'"  [size]="1" *ngIf="LoadMatProgressBar"></app-loader>
+                                                                    <button class="btn btn-light-success btn-block fw-bold" type="button" [disabled]="LoadMatProgressBar" (click)="getDashboardData(Subsector.Warehouse)">Warehouse & Logistics</button>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                          </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="app-academy">
+                                                        <div class="card card-border-shadow-danger h-100  text-center">
+                                                            <div class="card-body">
+                                                                    <div class="fs-1 text-uppercase">
+                                                                        <img src="assets\images\Telecom.svg" width="200">
+                                                                    </div>
+                                                                <div class="form-group mb-1 p-2 d-grid gap-2">
+                                                                    <app-loader [color]="'#1d47b1'"  [size]="1" *ngIf="LoadMatProgressBar"></app-loader>
+                                                                    <button class="btn btn-light-danger btn-block fw-bold" type="button" [disabled]="LoadMatProgressBar" (click)="getDashboardData(Subsector.Telecommunications)">Telecommunications</button>
+                                                                </div>
+                                                            </div>
+                                                          </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-lg-4">
+                                                    <div class="app-academy">
+                                                        <div class="card card-border-shadow-info h-100">
+                                                            <div class="card-body">
+                                                              <div class="d-flex align-items-center mb-2">
+                                                                <div class="avatar lg me-4">
+                                                                  <span class="avatar md rounded no-thumbnail text-info bg-info-subtle"><i class="bi bi-sign-merge-right fs-3"></i></span>
+                                                                </div>
+                                                                <h4 class="mb-0">Telecommunications</h4>
+                                                              </div>
+                                                              <p class="mb-1">On route vehicles</p>
+                                                              <p class="mb-0">
+                                                                <span class="text-heading fw-medium me-2">+18.2%</span>
+                                                                <small class="text-muted">than last week</small>
+                                                              </p>
+                                                              <div class="d-grid mt-3">
+                                                                <button class="btn btn-label-warning waves-effect text-warning" (click)="gotoInvits()">Get Started</button>
+                                                            </div>
+                                                            </div>
+                                                          </div>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                        <!-- <mat-progress-bar  mode="determinate" value="40"></mat-progress-bar> -->
+
+                                        <div id="panel" class="mt-3">
+                                        <!-- <ul class="nav nav-tabs tab-card" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" data-bs-toggle="tab" href="#Road" role="tab" (click)="getDashboardData(Subsector.Road)">
+                                                    Road
+                                                </a>
+                                            </li>
+                                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
+                                                    href="#Power"  role="tab" (click)="getDashboardData(Subsector.Power)">Power</a></li>
+                                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
+                                                    href="#Warehouse" role="tab" (click)="getDashboardData(Subsector.Warehouse)">Warehouse & Logistics</a></li>
+                                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
+                                                    href="#Telecommunications" role="tab" (click)="getDashboardData(Subsector.Telecommunications)">Telecommunications</a></li>
+                                        </ul> -->
+
+                                        <div class="tab-content mt-2"  >
+                                            <mat-progress-bar  mode="determinate" value="40"></mat-progress-bar>
+                                            <div #datasection *ngIf='isvisible==true' id="Road" >
+                                            <div class="tab-pane fade show active"   role="tabpanel" >
+                                                <div [innerHTML]='Dashboarddatalists.topDesc'><br/></div>
+                                                <div class="col-lg-12 mt-2">
+                                                    <app-sectorsubsection-ui [data]='Dashboarddatalists?.dashboardDatalist'></app-sectorsubsection-ui>
+                                                </div>
+                                                <div class="row my-3">
+                                                    <div class="col-lg-6">
+                                                        <div class="card">
+                                                            <div class="card-header py-3 justify-content-between bg-transparent border-bottom align-items-center flex-wrap">
+                                                                <div class="col-lg-12">
+                                                                    <h6 class="mb-0 fw-bold">Sector Highlights</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-body p-xl-0">
+                                                                <app-dasboardsubsection-ui [data]='Dashboarddatalists?.keymatriceslist'></app-dasboardsubsection-ui>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="card card-statistics">
+                                                            <div class="card-header py-3 justify-content-between bg-transparent border-bottom align-items-center flex-wrap">
+                                                                <div class="col-lg-12">
+                                                                    <h6 class="mb-0 fw-bold">In the News</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-body py-0">
+                                                                <app-dasboardsubsection-ui [dataNews]='Dashboarddatalists?.newsList'></app-dasboardsubsection-ui>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                 <div class="row my-3"></div>
+                                                    <!-- <div class="row my-3">
+                                                        <div class="col-lg-6">
+                                                            <div class="card">
+                                                                <div class="card-header py-3 justify-content-between bg-transparent border-bottom align-items-center flex-wrap">
+                                                                    <div class="col-lg-12">
+                                                                        <h6 class="mb-0 fw-bold">Break-up of budget expenditure on transport, by sector (%) </h6>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body p-xl-0">
+                                                                    <ul class="list-group list-group-flush">
+                                                                        <li class="list-group-item">
+                                                                            <div class="d-flex">
+                                                                                <div class="media-body flex-grow-1">
+                                                                                    <p class="text-muted mb-2">Road & Highways</p>
+                                                                                    <h5 class="mb-0">51.8%</h5>
+                                                                                </div>
+                                                                                <div class="icons-lg ms-2 align-self-center">
+                                                                                    <span class="uim-svg" style=""><i class="bi bi-sign-merge-left fs-2 text-primary"></i></span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <div class="d-flex">
+                                                                                <div class="media-body flex-grow-1">
+                                                                                    <p class="text-muted mb-2">Railways</p>
+                                                                                    <h5 class="mb-0">48%</h5>
+                                                                                </div>
+                                                                                <div class="icons-lg ms-2 align-self-center">
+                                                                                    <span class="uim-svg" style=""><i class="bi bi-train-front fs-2 text-primary"></i></span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <div class="d-flex">
+                                                                                <div class="media-body flex-grow-1">
+                                                                                    <p class="text-muted mb-2">Port, Shipping & Waterways</p>
+                                                                                    <h5 class="mb-0">0.21%</h5>
+                                                                                </div>
+                                                                                <div class="icons-lg ms-2 align-self-center">
+                                                                                    <span class="uim-svg" style=""><i class="bi bi-life-preserver fs-2 text-primary"></i></span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <div class="d-flex">
+                                                                                <div class="media-body flex-grow-1">
+                                                                                    <p class="text-muted mb-2">Civil Aviation</p>
+                                                                                    <h5 class="mb-0">0.02%</h5>
+                                                                                </div>
+                                                                                <div class="icons-lg ms-2 align-self-center">
+                                                                                    <span class="uim-svg" style=""><i class="bi bi-airplane fs-2 text-primary"></i></span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="card">
+                                                                <div class="card-header py-3 justify-content-between bg-transparent border-bottom align-items-center flex-wrap">
+                                                                    <div class="col-lg-12">
+                                                                        <h6 class="mb-0 fw-bold">Graph View</h6>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body text-center">
+                                                                    <img src="/assets/images/pie.jpg" width="98%">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row my-3">
+                                                        <div class="col-lg-6">
+                                                            <div class="card">
+                                                                <div class="card-header py-3 justify-content-between bg-transparent border-bottom align-items-center flex-wrap">
+                                                                    <div class="col-lg-12">
+                                                                        <h6 class="mb-0 fw-bold">Count of Road Projects in India</h6>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-bordered align-middle mb-0" style="width: 100%;">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>&nbsp;</th>
+                                                                                    <th style="text-align: right;">Count</th>
+                                                                                    <th style="text-align: right;">Value (US$ billion) </th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td>PPP</td>
+                                                                                    <td style="text-align: right;">59</td>
+                                                                                    <td style="text-align: right;">6.7</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>EPC</td>
+                                                                                    <td style="text-align: right;">282</td>
+                                                                                    <td style="text-align: right;">37</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>Others</td>
+                                                                                    <td style="text-align: right;">130</td>
+                                                                                    <td style="text-align: right;">9.9</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="card">
+                                                                <div class="card-header py-3 justify-content-between bg-transparent border-bottom align-items-center flex-wrap">
+                                                                    <div class="col-lg-12">
+                                                                        <h6 class="mb-0 fw-bold">Graph View</h6>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body text-center">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row my-3">
+                                                        <div class="col-lg-6">
+                                                            <div class="card">
+                                                                <div class="card-header py-3 justify-content-between bg-transparent border-bottom align-items-center flex-wrap">
+                                                                    <div class="col-lg-12">
+                                                                        <h6 class="mb-0 fw-bold">Shareholding Pattern</h6>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-bordered align-middle mb-0" style="width: 100%;">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>Type</th>
+                                                                                    <th style="text-align: right;">Percentage</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td>Sponsor</td>
+                                                                                    <td style="text-align: right;">21%</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>DII - Life Insurance</td>
+                                                                                    <td style="text-align: right;">11%</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>Other DIIs</td>
+                                                                                    <td style="text-align: right;">16%</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>FII</td>
+                                                                                    <td style="text-align: right;">25%</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>Retail</td>
+                                                                                    <td style="text-align: right;">24%</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>Others</td>
+                                                                                    <td style="text-align: right;">3%</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="card">
+                                                                <div class="card-header py-3 justify-content-between bg-transparent border-bottom align-items-center flex-wrap">
+                                                                    <div class="col-lg-12">
+                                                                        <h6 class="mb-0 fw-bold">Shareholding Pattern
+                                                                             Graph View</h6>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body text-center">
+                                                                    <img src="/assets/images/shareholding.jpg" width="98%"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
+                                            </div>
+                                        </div>
+                                            <div class="tab-pane fade" id="Power" role="tabpanel">
+                                               <div [innerHTML]='Dashboarddatalists?.topDesc'><br/></div>
+                                                     <div class="col-lg-12 mt-2">
+                                                        <app-sectorsubsection-ui [data]='Dashboarddatalists?.dashboardDatalist'></app-sectorsubsection-ui>
+                                                    </div>
+                                                    <div class="row my-3">
+                                                        <div class="col-lg-6">
+                                                            <div class="card">
+                                                                <div class="card-header py-3 justify-content-between bg-transparent border-bottom align-items-center flex-wrap">
+                                                                    <div class="col-lg-12">
+                                                                        <h6 class="mb-0 fw-bold">Sector Highlights</h6>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body p-xl-0">
+                                                                    <app-dasboardsubsection-ui [data]='Dashboarddatalists?.keymatriceslist'></app-dasboardsubsection-ui>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="card card-statistics">
+                                                                <div class="card-header py-3 justify-content-between bg-transparent border-bottom align-items-center flex-wrap">
+                                                                    <div class="col-lg-12">
+                                                                        <h6 class="mb-0 fw-bold">In the News</h6>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body py-0">
+                                                                    <app-dasboardsubsection-ui [dataNews]='Dashboarddatalists?.newsList'></app-dasboardsubsection-ui>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="Warehouse" role="tabpanel">
+                                                <div [innerHTML]='Dashboarddatalists?.topDesc'><br/></div>
+                                                <div class="col-lg-12 mt-2">
+                                                    <app-sectorsubsection-ui [data]='Dashboarddatalists?.dashboardDatalist'></app-sectorsubsection-ui>
+                                                </div>
+                                                <div class="row my-3">
+                                                    <div class="col-lg-6">
+                                                        <div class="card">
+                                                            <div class="card-header py-3 justify-content-between bg-transparent border-bottom align-items-center flex-wrap">
+                                                                <div class="col-lg-12">
+                                                                    <h6 class="mb-0 fw-bold">Sector Highlights</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-body p-xl-0">
+                                                                <app-dasboardsubsection-ui [data]='Dashboarddatalists?.keymatriceslist'></app-dasboardsubsection-ui>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="card card-statistics">
+                                                            <div class="card-header py-3 justify-content-between bg-transparent border-bottom align-items-center flex-wrap">
+                                                                <div class="col-lg-12">
+                                                                    <h6 class="mb-0 fw-bold">In the News</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-body py-0">
+                                                                <app-dasboardsubsection-ui [dataNews]='Dashboarddatalists?.newsList'></app-dasboardsubsection-ui>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="Telecommunications" role="tabpanel">
+                                                <div [innerHTML]='Dashboarddatalists?.topDesc'><br/></div>
+                                                <div class="col-lg-12 mt-2">
+                                                    <app-sectorsubsection-ui [data]='Dashboarddatalists?.dashboardDatalist'></app-sectorsubsection-ui>
+                                                </div>
+                                                <div class="row my-3">
+                                                    <div class="col-lg-6">
+                                                        <div class="card">
+                                                            <div class="card-header py-3 justify-content-between bg-transparent border-bottom align-items-center flex-wrap">
+                                                                <div class="col-lg-12">
+                                                                    <h6 class="mb-0 fw-bold">Sector Highlights</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-body p-xl-0">
+                                                                <app-dasboardsubsection-ui [data]='Dashboarddatalists?.keymatriceslist'></app-dasboardsubsection-ui>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="card card-statistics">
+                                                            <div class="card-header py-3 justify-content-between bg-transparent border-bottom align-items-center flex-wrap">
+                                                                <div class="col-lg-12">
+                                                                    <h6 class="mb-0 fw-bold">In the News</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-body py-0">
+                                                                <app-dasboardsubsection-ui [dataNews]='Dashboarddatalists?.newsList'></app-dasboardsubsection-ui>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <mat-progress-bar  mode="determinate" value="40"></mat-progress-bar>
+                                    <div class="tab-pane fade" id="nav-HTML8" role="tabpanel">
+                                        <div [innerHTML]='Dashboarddatalists?.topDesc'><br/><br/></div>
+                                                <div class="col-lg-12 mt-2">
+                                                    <app-sectorsubsection-ui [data]='Dashboarddatalists?.dashboardDatalist'></app-sectorsubsection-ui>
+                                                    
+                                                </div>
+                                                <div class="row my-3">
+                                                    <div class="col-lg-6">
+                                                        <div class="card">
+                                                            <div class="card-header py-3 justify-content-between bg-transparent border-bottom align-items-center flex-wrap">
+                                                                <div class="col-lg-12">
+                                                                    <h6 class="mb-0 fw-bold">Sector Highlights</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-body p-xl-0">
+                                                                <app-dasboardsubsection-ui [data]='Dashboarddatalists?.keymatriceslist'></app-dasboardsubsection-ui>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="card card-statistics">
+                                                            <div class="card-header py-3 justify-content-between bg-transparent border-bottom align-items-center flex-wrap">
+                                                                <div class="col-lg-12">
+                                                                    <h6 class="mb-0 fw-bold">In the News</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-body py-0">
+                                                                <app-dasboardsubsection-ui [dataNews]='Dashboarddatalists?.newsList'></app-dasboardsubsection-ui>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                    </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Custom Settings-->
+<div class="modal fade right" id="Settingmodal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog  modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Custome Settings</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body custom_setting">
+                <!-- Settings: Color -->
+                <div class="setting-theme pb-3">
+                    <h6 class="card-title mb-2 fs-6 d-flex align-items-center"><i
+                            class="icofont-color-bucket fs-4 me-2 text-primary"></i>Template Color Settings
+                    </h6>
+                    <ul class="list-unstyled row row-cols-3 g-2 choose-skin mb-2 mt-2">
+                        <li data-theme="indigo">
+                            <div class="indigo"></div>
+                        </li>
+                        <li data-theme="tradewind">
+                            <div class="tradewind"></div>
+                        </li>
+                        <li data-theme="monalisa">
+                            <div class="monalisa"></div>
+                        </li>
+                        <li data-theme="blue">
+                            <div class="blue"></div>
+                        </li>
+                        <li data-theme="cyan">
+                            <div class="cyan"></div>
+                        </li>
+                        <li data-theme="green">
+                            <div class="green"></div>
+                        </li>
+                        <li data-theme="orange" class="active">
+                            <div class="orange"></div>
+                        </li>
+                        <li data-theme="blush">
+                            <div class="blush"></div>
+                        </li>
+                        <li data-theme="red">
+                            <div class="red"></div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Settings: Template dynamics -->
+                <div class="dynamic-block py-3">
+                    <ul class="list-unstyled choose-skin mb-2 mt-1">
+                        <li data-theme="dynamic">
+                            <div class="dynamic"><i class="icofont-paint me-2"></i> Click to Dyanmic Setting
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="dt-setting">
+                        <ul class="list-group list-unstyled mt-1">
+                            <li
+                                class="list-group-item d-flex justify-content-between align-items-center py-1 px-2">
+                                <label>Primary Color</label>
+                                <button id="primaryColorPicker"
+                                    class="btn bg-primary avatar xs border-0 rounded-0"></button>
+                            </li>
+                            <li
+                                class="list-group-item d-flex justify-content-between align-items-center py-1 px-2">
+                                <label>Secondary Color</label>
+                                <button id="secondaryColorPicker"
+                                    class="btn bg-secondary avatar xs border-0 rounded-0"></button>
+                            </li>
+                            <li
+                                class="list-group-item d-flex justify-content-between align-items-center py-1 px-2">
+                                <label class="text-muted">Chart Color 1</label>
+                                <button id="chartColorPicker1"
+                                    class="btn chart-color1 avatar xs border-0 rounded-0"></button>
+                            </li>
+                            <li
+                                class="list-group-item d-flex justify-content-between align-items-center py-1 px-2">
+                                <label class="text-muted">Chart Color 2</label>
+                                <button id="chartColorPicker2"
+                                    class="btn chart-color2 avatar xs border-0 rounded-0"></button>
+                            </li>
+                            <li
+                                class="list-group-item d-flex justify-content-between align-items-center py-1 px-2">
+                                <label class="text-muted">Chart Color 3</label>
+                                <button id="chartColorPicker3"
+                                    class="btn chart-color3 avatar xs border-0 rounded-0"></button>
+                            </li>
+                            <li
+                                class="list-group-item d-flex justify-content-between align-items-center py-1 px-2">
+                                <label class="text-muted">Chart Color 4</label>
+                                <button id="chartColorPicker4"
+                                    class="btn chart-color4 avatar xs border-0 rounded-0"></button>
+                            </li>
+                            <li
+                                class="list-group-item d-flex justify-content-between align-items-center py-1 px-2">
+                                <label class="text-muted">Chart Color 5</label>
+                                <button id="chartColorPicker5"
+                                    class="btn chart-color5 avatar xs border-0 rounded-0"></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Settings: Font -->
+                <div class="setting-font py-3">
+                    <h6 class="card-title mb-2 fs-6 d-flex align-items-center"><i
+                            class="icofont-font fs-4 me-2 text-primary"></i> Font Settings</h6>
+                    <ul class="list-group font_setting mt-1">
+                        <li class="list-group-item py-1 px-2">
+                            <div class="form-check mb-0">
+                                <input class="form-check-input" type="radio" name="font" id="font-poppins"
+                                    value="font-poppins">
+                                <label class="form-check-label" for="font-poppins">
+                                    Poppins Google Font
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item py-1 px-2">
+                            <div class="form-check mb-0">
+                                <input class="form-check-input" type="radio" name="font" id="font-opensans"
+                                    value="font-opensans">
+                                <label class="form-check-label" for="font-opensans">
+                                    Open Sans Google Font
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item py-1 px-2">
+                            <div class="form-check mb-0">
+                                <input class="form-check-input" type="radio" name="font"
+                                    id="font-montserrat" value="font-montserrat">
+                                <label class="form-check-label" for="font-montserrat">
+                                    Montserrat Google Font
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item py-1 px-2">
+                            <div class="form-check mb-0">
+                                <input class="form-check-input" type="radio" name="font" id="font-Plex"
+                                    value="font-Plex" checked="">
+                                <label class="form-check-label" for="font-Plex">
+                                    Plex Google Font
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Settings: Light/dark -->
+                <div class="setting-mode py-3">
+                    <h6 class="card-title mb-2 fs-6 d-flex align-items-center"><i
+                            class="icofont-layout fs-4 me-2 text-primary"></i>Contrast Layout</h6>
+                    <ul class="list-group list-unstyled mb-0 mt-1">
+                        <li class="list-group-item d-flex align-items-center py-1 px-2">
+                            <div class="form-check form-switch theme-switch mb-0">
+                                <input class="form-check-input" type="checkbox" id="theme-switch">
+                                <label class="form-check-label" for="theme-switch">Enable Dark Mode!</label>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center py-1 px-2">
+                            <div class="form-check form-switch theme-high-contrast mb-0">
+                                <input class="form-check-input" type="checkbox" id="theme-high-contrast">
+                                <label class="form-check-label" for="theme-high-contrast">Enable High
+                                    Contrast</label>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center py-1 px-2">
+                            <div class="form-check form-switch theme-rtl mb-0">
+                                <input class="form-check-input" type="checkbox" id="theme-rtl">
+                                <label class="form-check-label" for="theme-rtl">Enable RTL Mode!</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-start">
+                <button type="button" class="btn btn-white border lift" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary lift">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
