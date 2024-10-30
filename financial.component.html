@@ -1,0 +1,230 @@
+<!--<h4>Basic mat-select</h4>-->
+<mat-form-field >
+  <mat-label>All</mat-label>
+  <mat-select [value]="0" (selectionChange)="OnSelectChange($event)">
+    
+    <mat-option *ngFor="let op of catdatasource" [value]="op.categoryId" >
+      {{ op.category }}
+    </mat-option>
+  </mat-select> 
+ 
+</mat-form-field>
+<ul class="nav nav-tabs tab-card" role="tablist">
+  <li class="nav-item" role="presentation" >
+     <a class="nav-link active" data-bs-toggle="tab" href="#consolidated" role="tab" aria-selected="true" tabindex="-1" (click)="tabchange(0)">Consolidated</a>
+      <!--<<button  class="nav-link" data-bs-toggle="tab" id="#consolidated" aria-selected="false"  tabindex="-1" (click)="tabchange('consolidated')">Consolidated</button>-->
+  </li>
+  <li class="nav-item" role="presentation">
+<a class="nav-link" data-bs-toggle="tab" href="#standalone" role="tab" aria-selected="false"  (click)="tabchange(1)"  >Standalone</a>
+<!--<button  class="nav-link active" data-bs-toggle="tab" id="#standalone" aria-selected="true"  (click)="tabchange('standalone')">Standalone</button>-->
+  </li>
+</ul>
+<div class="tab-content mt-2">
+  <div class="tab-pane fade active show" id="consolidated" role="tabpanel">
+     <!-- abc-->
+      <div  class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" class="table table-bordered">
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef style="text-align: left;"> CATEGORY </th>
+            <td mat-cell *matCellDef="let element" style="text-align: left;"> {{element.category}} </td>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="period">
+            <th mat-header-cell *matHeaderCellDef style="text-align: left;"> TYPE </th>
+            <td mat-cell *matCellDef="let element" style="text-align: left;"> {{element.period}} </td>
+          </ng-container>
+      
+          <!-- Weight Column -->
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> PERIOD </th>
+            <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+          </ng-container>
+      
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dashDPName">
+            <th mat-header-cell *matHeaderCellDef> DATAPOINT </th>
+            <td mat-cell *matCellDef="let element"> {{element.dashDPName}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="data">
+            <th mat-header-cell *matHeaderCellDef> VALUES </th>
+            <td mat-cell *matCellDef="let element"> {{element.data}} </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      
+        <mat-paginator  #paginator [pageSizeOptions]="[5, 10, 20]" 
+                       showFirstLastButtons
+                       aria-label="Select page of periodic elements">
+        </mat-paginator>
+      </div>
+
+  </div>
+  <div class="tab-pane fade" id="standalone" role="tabpanel">
+     <!--- xyz-->
+      <div  #mainDiv="" class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSourcestd" class="table table-bordered">
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef style="text-align: left;"> CATEGORY </th>
+            <td mat-cell *matCellDef="let element" style="text-align: left;"> {{element.category}} </td>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="period">
+            <th mat-header-cell *matHeaderCellDef  style="text-align: left;"> TYPE </th>
+            <td mat-cell *matCellDef="let element" style="text-align: left;"> {{element.period}} </td>
+          </ng-container>
+      
+          <!-- Weight Column -->
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> PERIOD </th>
+            <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+          </ng-container>
+      
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="dashDPName">
+            <th mat-header-cell *matHeaderCellDef> DATAPOINT </th>
+            <td mat-cell *matCellDef="let element"> {{element.dashDPName}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="data">
+            <th mat-header-cell *matHeaderCellDef> VALUES </th>
+            <td mat-cell *matCellDef="let element"> {{element.data}} </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      
+        <mat-paginator   #paginator1  [pageSizeOptions]="[5, 10, 20]" 
+                       showFirstLastButtons 
+                       aria-label="Select page of periodic elements">
+        </mat-paginator>
+      </div>
+  </div>
+</div>
+
+<!--  <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style"
+      #group="matButtonToggleGroup" [formControl]=tab (change)="tabchange($event.value)">
+      <mat-button-toggle *ngFor="let sec of lsttab" [value]="sec" class="sedd"
+          matTooltipPosition="above">{{sec}}</mat-button-toggle>
+  </mat-button-toggle-group>
+
+<mat-form-field >
+  <mat-label>All</mat-label>
+  <mat-select [value]="0" (selectionChange)="OnSelectChange($event)">
+    
+    <mat-option *ngFor="let op of catdatasource" [value]="op.categoryId" >
+      {{ op.category }}
+    </mat-option>
+  </mat-select> 
+ 
+</mat-form-field>
+<br><br>
+<mat-tab-group  class="demo-tab-group" preserveContent #mattabgroup
+(selectedTabChange)="_selectedTabChange($event.index)"
+(selectedIndexChange)="_selectedIndexChange($event)"
+[selectedIndex]="selectedIndex" >
+    <mat-tab label="Consolidated" >
+    <!--  <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/B-lipaiZII8"
+        style="border: 0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>-->
+
+     <!--   <div  class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" class="table table-bordered">-->
+          
+            
+             <!-- <ng-container matColumnDef="category">
+                <th mat-header-cell *matHeaderCellDef> CATEGORY </th>
+                <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+              </ng-container>
+          
+            
+              <ng-container matColumnDef="period">
+                <th mat-header-cell *matHeaderCellDef> TYPE </th>
+                <td mat-cell *matCellDef="let element"> {{element.period}} </td>
+              </ng-container>
+          
+              
+              <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef> PERIOD </th>
+                <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+              </ng-container>
+          
+        
+              <ng-container matColumnDef="dashDPName">
+                <th mat-header-cell *matHeaderCellDef> DATAPOINT </th>
+                <td mat-cell *matCellDef="let element"> {{element.dashDPName}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="data">
+                <th mat-header-cell *matHeaderCellDef> VALUES </th>
+                <td mat-cell *matCellDef="let element"> {{element.data}} </td>
+              </ng-container>
+          
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          
+            <mat-paginator  #paginator [pageSizeOptions]="[5, 10, 20]" 
+                           showFirstLastButtons
+                           aria-label="Select page of periodic elements">
+            </mat-paginator>
+          </div>
+
+    </mat-tab>
+    <mat-tab label="Standalone">
+        <div  #mainDiv="" class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSourcestd">
+          
+             
+              <ng-container matColumnDef="category">
+                <th mat-header-cell *matHeaderCellDef> CATEGORY </th>
+                <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+              </ng-container>
+          
+          
+              <ng-container matColumnDef="period">
+                <th mat-header-cell *matHeaderCellDef> TYPE </th>
+                <td mat-cell *matCellDef="let element"> {{element.period}} </td>
+              </ng-container>
+          
+             
+              <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef> PERIOD </th>
+                <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+              </ng-container>
+          
+              
+              <ng-container matColumnDef="dashDPName">
+                <th mat-header-cell *matHeaderCellDef> DATAPOINT </th>
+                <td mat-cell *matCellDef="let element"> {{element.dashDPName}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="data">
+                <th mat-header-cell *matHeaderCellDef> VALUES </th>
+                <td mat-cell *matCellDef="let element"> {{element.data}} </td>
+              </ng-container>
+          
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          
+            <mat-paginator   #paginator1  [pageSizeOptions]="[5, 10, 20]" 
+                           showFirstLastButtons 
+                           aria-label="Select page of periodic elements">
+            </mat-paginator>
+          </div>
+    </mat-tab>
+  </mat-tab-group>-->

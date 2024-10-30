@@ -1,0 +1,68 @@
+<h2 mat-dialog-title>Common Directorship</h2>
+<mat-dialog-content class="mat-typography">
+  <!-- <table mat-table [dataSource]="LstDirector" class="mat-elevation-z8 demo-table">
+                                        
+        <ng-container [matColumnDef]="column" *ngFor="let column of disdirectorColumns; let i = index;">
+          <th mat-header-cell *matHeaderCellDef  width ="20%" > {{column}} </th>
+       <td mat-cell *matCellDef="let row; " width ="20%"> {{row.column}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="disdirectorColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: disdirectorColumns;"></tr>
+      </table>-->
+   <!--   <mat-paginator [length]="Totalrec" [pageSizeOptions]="[5, 10, 20]"
+showFirstLastButtons
+aria-label="Select page of periodic elements">
+</mat-paginator>-->
+<!--<table mat-table [dataSource]="LstDirector" class="mat-elevation-z8 demo-table">
+                                        
+  <ng-container [matColumnDef]="column.key" *ngFor="let column of lstcols; let i = index;">
+    <th mat-header-cell *matHeaderCellDef  width ="20%" > {{column.value.tostring()}} </th>
+ <td mat-cell *matCellDef="let row; " width ="20%"> {{row[column.key.tostring()]}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="disdirectorColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: disdirectorColumns;"></tr>
+</table>-->
+
+
+
+<table mat-table [dataSource]="LstDirector" class=" table table-bordered mt-2">
+          
+  <!-- Position Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> NAME </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="companyName">
+    <th mat-header-cell *matHeaderCellDef> COMPANY NAME </th>
+    <td mat-cell *matCellDef="let element"> {{element.companyName}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="beginDate">
+    <th mat-header-cell *matHeaderCellDef> BEGIN DATE </th>
+    <td mat-cell *matCellDef="let element"> {{element.beginDate}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="endDate">
+    <th mat-header-cell *matHeaderCellDef> END DATE </th>
+    <td mat-cell *matCellDef="let element"> {{element.endDate}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="activeCompliance">
+    <th mat-header-cell *matHeaderCellDef> ACTIVECOMPLIANCE </th>
+    <td mat-cell *matCellDef="let element"> {{element.data}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="disdirectorColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: disdirectorColumns;"></tr>
+</table>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>OK</button>
+</mat-dialog-actions>

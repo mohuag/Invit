@@ -1,0 +1,321 @@
+<div class="page-title-box">
+    <div class="body-header d-flex">
+        <div class="container-xxl">
+            <div class="row align-items-center g-2">
+                <div class="col">
+                    <!-- Pretitle -->
+                </div>
+            </div> <!-- Row end  -->
+        </div>
+    </div>
+</div>
+<!-- Body: Body -->
+<div class="body d-flex py-3">
+    <div class="page-content-wrapper">
+        <div class="container-xxl">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form [formGroup]="myForm">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <!-- <div class="row g-3 pt-2 pb-3">
+                                    <div class="col-lg-4">
+                                        <div class="btn-group btn-group-justified" role="group"
+                                        aria-label="Basic radio toggle button group">
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="validationCustom01" class="form-label">Sector</label>-->
+                                <!-- <select class="form-select">
+                                        <option selected>Road</option>
+                                        <option value="1">Power</option>
+                                        <option value="2">Warehouse</option>
+                                    </select> -->
+
+                                <!-- <select class="form-select" id="6" ngDefaultControl [formControl]='Sector'>
+                                            <option [value]="" selected="true">Select Sector</option>
+                                            @for (item of Formdatalists; track $index) {
+                                            <option [value]="item.subSectorId">{{item.subSectorName}}</option>
+                                            }
+
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="validationCustom01" class="form-label">Entity
+                                            Selection</label>
+                                        <select class="form-select" id="6" ngDefaultControl [formControl]='Entity'>
+                                            <option [value]="">Select Entity</option>
+                                            @for (item of LstEntity; track $index) {
+                                            <option [value]="item.entityId">{{item.entityName}}</option>
+                                            }
+
+                                        </select>
+                                    </div>-->
+                                <div class="row g-3 pt-2 pb-3">
+                                    <!-- <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+                                <app-loader [color]="'#1d47b1'"  [size]="1" *ngIf="ISsector&&Isentity"></app-loader> -->
+                                    <div class="col-lg-4">
+                                        <label class="form-label">Select</label>
+                                        <!-- <label for="validationCustom01" class="form-label">Select Sector</label> -->
+                                        <div role="group" aria-label="Basic radio toggle button group">
+                                            <mat-button-toggle-group appearance="legacy" name="fontStyle"
+                                                aria-label="Font Style" #group="matButtonToggleGroup"
+                                                [formControl]=Sector (change)="UpdateSubSector($event.value)">
+                                                <mat-button-toggle *ngFor="let sec of InputData?.LstSector"
+                                                    [value]="sec.Id" class="sedd"
+                                                    matTooltipPosition="above">{{sec.Name}}</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <!--<label for="validationCustom01" class="form-label">Sector</label>
+                                
+                                    <select class="form-select" 
+                                   
+                                     ngDefaultControl [formControl]='Sector'>
+                                    <option [value]="" selected="true">Select Sector</option>
+                                    @for (item of Formdatalists; track $index) {
+                                       <option  [value]="item.subSectorId">{{item.subSectorName}}</option>
+                                    }
+                                    
+                                 </select>-->
+                                        <label for="validationCustom01" class="form-label">Sector</label>
+                                        <mat-select class="form-control" ngDefaultControl id="6" [formControl]="Sector">
+                                            @for (item of Formdatalists; track $index){
+                                            <mat-option [value]="item.subSectorId" (onSelectionChange)="changeentity($event.source.value)">
+                                                {{item.subSectorName}}
+                                            </mat-option>
+                                            }
+                                        </mat-select>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <!--<label for="validationCustom01" class="form-label">Entity
+                                        Selection</label>
+                                        <select class="form-select"
+                                         ngDefaultControl [formControl]='Entity'>
+                                        <option [value]="">Select Entity</option>
+                                        @for (item of LstEntity; track $index) {
+                                           <option  [value]="item.entityId">{{item.entityName}}</option>
+                                        }
+                                        
+                                     </select>-->
+                                        <label for="validationCustom01" class="form-label">Entity</label>
+                                        <mat-select class="form-control" ngDefaultControl id="6" [formControl]="Entity">
+                                            @for (item of LstEntity; track $index) {
+                                            <mat-option [value]="item.entityId">
+                                                {{item.entityName}}
+                                            </mat-option>
+                                            }
+                                        </mat-select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary" (click)="onsubmit()">Submit</button>
+                                <button class="btn btn-light ms-2" (click)="resetForm()">Reset</button>
+                            </div>
+                        </div>
+                        <!-- </div>-->
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="nav nav-pills1 mb-3" role="tablist">
+                        <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#profile"
+                                role="tab">Profile</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#shareholding"
+                                role="tab">Shareholding Pattern</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#spvinfo" role="tab">SPV
+                                Information</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#financial"
+                                role="tab">Financials</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#Rating"
+                                role="tab">Rating</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#management"
+                                role="tab">Management</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row" id="profile">
+                <div class="col-lg-12">
+                    <div class="card mb-3">
+                        <div class="card-header py-3 bg-transparent border-bottom">
+                            <h6 class="mb-0 fw-bold ">Profile</h6>
+                        </div>
+                        <!--  <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+                        <app-loader [color]="'#1d47b1'"  [size]="1" *ngIf="isLoadingProf"></app-loader>-->
+                        <app-sectorsubsection-ui [data]='LstProfile'></app-sectorsubsection-ui>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-3" id="shareholding">
+
+                <app-shareholdingdata *ngIf="Issubmit" [count]="count"
+                    [myFormval]="myForm.value"></app-shareholdingdata>
+                <!-- } -->
+                <!-- </div>-->
+
+            </div>
+            <div class="row my-3" id="spvinfo">
+                <div class="col-lg-6">
+                    <div class="card mb-3">
+                        <div class="card-header py-3 bg-transparent border-bottom">
+                            <h6 class="mb-0 fw-bold ">Special Purpose Vehicle Info</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <div>
+                                    <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+                                    <app-loader [color]="'#1d47b1'" [size]="1" *ngIf="isLoadingspv"></app-loader>
+                                    <table #table  mat-table [dataSource]="Lstdata" class="mat-elevation-z8 demo-table table table-bordered">
+                                        <ng-container [matColumnDef]="column.key"
+                                            *ngFor="let column of LstSPVColumns;">
+                                            <th mat-header-cell *matHeaderCellDef width="20%"> {{column.value}}
+                                            </th>
+                                            <td mat-cell *matCellDef="let row; " matTooltip={{row[column.key]}}
+                                                width="20%">
+                                                {{(row[column.key])?.substr(0,20) || 'N/A'}} </td>
+                                        </ng-container>
+
+                                        <tr mat-header-row *matHeaderRowDef="displaycolumns"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: displaycolumns;"></tr>
+
+                                        <!--<mat-header-row *matHeaderRowDef="displaycolumns"></mat-header-row>
+<mat-row *matRowDef="let row; columns: displaycolumns;"></mat-row>-->
+                                  </table>
+                                    <mat-paginator #paginator [length]="totalrecords" [pageSizeOptions]="[5, 10, 20]"
+                                        showFirstLastButtons aria-label="Select page of periodic elements">
+                                    </mat-paginator>
+   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header py-3 bg-transparent border-bottom">
+                            <h6 class="mb-0 fw-bold ">
+                                Special Purpose Vehicle Graph
+                            </h6>
+                        </div>
+                        <div class="card-body">
+                            <!-- <app-map *ngIf="Issubmit" [count]="count" [graphdata]="LstSPVDetails"></app-map> -->
+                             <app-mapchart *ngIf="ismapget" [graphdata]="LstSPVDetails"> </app-mapchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="financial">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div
+                            class="card-header py-3 justify-content-between bg-transparent border-bottom align-items-center flex-wrap">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <h6 class="mb-0 fw-bold">Financials</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <app-financial *ngIf="Issubmit" [count]="count" [myFormval]="myForm.value"></app-financial>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-3" id="Rating">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div
+                            class="card-header py-3 justify-content-between bg-transparent border-bottom align-items-center flex-wrap">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <h6 class="mb-0 fw-bold">Rating</h6>
+                                    </div>
+                                    <div class="col-lg-7 text-md-end"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <!-- <div class="table-responsive">
+                                <table class="table table-bordered align-middle mb-0">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Rating Date</th>
+                                        <th scope="col" style="text-align: center;">Amount</th>
+                                        <th scope="col" style="text-align: center;">Rating</th>
+                                        <th scope="col" style="text-align: center;">Rating By</th>
+                                        <th scope="col" style="text-align: center;">Long Term / Short Term</th>
+                                        <th scope="col" style="text-align: center;">Instrument</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td scope="col">14-06-2023</td>
+                                        <td scope="col" style="text-align: center;">3364</td>
+                                        <td scope="col" style="text-align: center;">
+                                            <span class="badge badge-dim bg-outline-primary">AAA</span></td>
+                                        <td scope="col" style="text-align: center;">ICRA</td>
+                                        <td scope="col" style="text-align: center;">Long Term</td>
+                                        <td scope="col" style="text-align: center;">Fund-based Term Loan - I</td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                            </div>-->
+
+                            <app-rating *ngIf="Issubmit" [count]="count" [myFormval]="myForm.value"></app-rating>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-3" name="management">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div
+                            class="card-header py-3 justify-content-between bg-transparent border-bottom align-items-center flex-wrap">
+                            <div class="col-lg-12">
+                                <h6 class="mb-0 fw-bold">Management</h6>
+                            </div>
+                        </div>
+                        <div id="Management" class="card-body">
+                            <div class="table-responsive">
+                                <table mat-table [dataSource]="LstManagementdata" class="table table-bordered">
+                                    <ng-container [matColumnDef]="col" *ngFor="let col of displayManagementColumns">
+                                        <th mat-header-cell *matHeaderCellDef>
+                                            {{col}}
+                                        </th>
+                                        @if(col=="NAME")
+                                        {
+                                        <td mat-cell *matCellDef="let element" (click)="openDialog(element)">
+                                            {{element[col.toLowerCase()]}}
+                                        </td>
+                                        }
+                                        @else
+                                        {
+                                        <td mat-cell *matCellDef="let element">
+                                            {{element[col.toLowerCase()]}}
+                                        </td>
+                                        }
+                                    </ng-container>
+                                    <tr mat-header-row *matHeaderRowDef="displayManagementColumns"></tr>
+                                    <tr mat-row *matRowDef="let row; columns: displayManagementColumns;"></tr>
+                                    <tr class="mat-row" *matNoDataRow>
+                                        <td class="mat-cell" colspan="6">No data Found</td>
+                                </table>
+                                <mat-paginator #mngmnttpaginator [length]="totalmngmntrecords"
+                                    [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+                                </mat-paginator>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
